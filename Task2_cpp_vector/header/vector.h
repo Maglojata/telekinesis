@@ -20,10 +20,10 @@ class vector {
     public:
         vector();
         vector(size_type);
-            vector(size_type, const_reference);
+        vector(size_type, const_reference);
         vector(const vector&);
         vector(vector&&);
-            vector(std::initializer_list<value_type>);
+        vector(std::initializer_list<value_type>);
         ~vector();
 
     public:
@@ -49,7 +49,7 @@ class vector {
     public:
         size_type size();
         size_type capacity();
-                bool empty();
+        bool empty();
 };
 
 #include "vector.hpp"
