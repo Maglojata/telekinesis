@@ -18,14 +18,14 @@
 		}
 	}
 
-  	template <typename T>
-        vector<T>::vector(size_type length)
-                : vector(length, value_type{})
+	template <typename T>
+	vector<T>::vector(size_type length)
+		: vector(length, value_type{})
 	{}
 	
 	template <typename T>
-        vector<T>::vector()
-                : vector(0, value_type{})
+	vector<T>::vector()
+		: vector(0, value_type{})
 	{}
 
 	template <typename T> 
@@ -64,6 +64,7 @@
 
 
 	// copy assignment
+
 	template <typename T>
 	const vector<T>&
 	vector<T>::operator=(const vector& rhv) {
@@ -78,6 +79,7 @@
 		}	
 		return *this;
 	}
+
 
 	// move assignment
 
@@ -111,7 +113,7 @@
         }
 
 	template <typename T> 
-    	void 
+	void 
 	vector<T>::clear() {
             if (this -> m_arr != nullptr) {
                 delete [] this -> m_arr;
@@ -144,7 +146,7 @@
         }
 
 	template <typename T>
-        void 
+	void 
 	vector<T>::pop_back(){
             if (this -> m_size != 0) {
                --this -> m_size;
@@ -153,20 +155,20 @@
 
 	template <typename T>
 	void
-        vector<T>::insert(size_type index, const_reference val){
-            recap(this -> m_size);
-            ++this -> m_size;
-            for (size_t i = m_size - 1; i > index; --i){
-                this -> m_arr[i] = this -> m_arr[i - 1];
-                this -> m_arr[index] = val;
+	vector<T>::insert(size_type index, const_reference val){
+		recap(this -> m_size);
+		++this -> m_size;
+		for (size_t i = m_size - 1; i > index; --i){
+			this -> m_arr[i] = this -> m_arr[i - 1];
+			this -> m_arr[index] = val;
             }
         }
 	
 	template <typename T>
 	void
-        vector<T>::erase(size_type index) {
-            	for (size_t i = index; i < m_size - 1; ++i) {
-                this -> m_arr[i] = this -> m_arr[i + 1];
+	vector<T>::erase(size_type index) {
+		for (size_t i = index; i < m_size - 1; ++i) {
+		this -> m_arr[i] = this -> m_arr[i + 1];
             }
             --this -> m_size;
         }
@@ -181,47 +183,41 @@
 
 	template <typename T>
 	typename vector<T>::reference
-        vector<T>::at(size_type index) {
-            if (index < this -> m_size) {
-                return this -> m_arr[index];
-            }
+    vector<T>::at(size_type index) {
+		if (index < this -> m_size) {
+			return this -> m_arr[index];
+		}
         throw 1;
-        }
+	}
 
 	template <typename T>
 	typename vector<T>::reference
-        vector<T>::front() {
-            if (this -> m_size > 0) {
-                return this -> m_arr[0];
-            }
-            throw 1;
-        }
+   	vector<T>::front() {
+		return this -> m_arr[0];
+	}
 
 	template <typename T>
-        typename vector<T>::reference
+	typename vector<T>::reference
 	vector<T>::back() {
-            if (this -> m_size > 0) {
-                return this -> m_arr[this -> m_size - 1];
-            }
-        throw 1;
-        }
+		return this -> m_arr[this -> m_size - 1];
+	}
   
 	template <typename T>
-        bool 
+	bool 
 	vector<T>::empty() {
-            return !this -> m_size;
-        }
+		return !this -> m_size;
+	}
 
 	template <typename T>
-        size_t 
+    size_t 
 	vector<T>::size(){
-            return this -> m_size;
-        }
+		return this -> m_size;
+	}
 
 	template <typename T>
-        size_t 
+   	size_t 
 	vector<T>::capacity() {
-            return this -> m_capacity;
-        }
+		return this -> m_capacity;
+	}
 
 #endif                                                                                                                                                                                   
