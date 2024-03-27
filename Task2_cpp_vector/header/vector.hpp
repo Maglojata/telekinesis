@@ -209,13 +209,13 @@
     }
 
     template <typename T>
-    size_t
+    typename vector<T>::size_type
     vector<T>::size(){
         return this -> m_size;
     }
 
     template <typename T>
-    size_t
+    typename vector<T>size_type
     vector<T>::capacity() {
         return this -> m_capacity;
     }
