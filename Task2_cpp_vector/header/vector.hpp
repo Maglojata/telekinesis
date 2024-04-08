@@ -215,9 +215,29 @@
     }
 
     template <typename T>
-    typename vector<T>size_type
+    typename vector<T>::size_type
     vector<T>::capacity() {
         return this -> m_capacity;
     }
 
+	template <typename T>
+	typename vector<T>::reference
+    vector<T>::operator[](size_type index) {
+        return m_arr[index];
+	}   
+        
+    template <typename T>
+    bool
+    operator==(const vector<T>& lhv, const vector<T>& rhv) {
+        return lhv == rhv;
+    }
+    
+	namespace std {
+    template <typename T>
+    	ostream& operator <<(ostream& out, const vector<T>& ob){
+        	for (size_t i = 0; i < ob.size(); ++i) {
+            	out << ob[i] << ' ';
+        	}
+    	}
+	}	
 #endif                                                     

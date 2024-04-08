@@ -29,6 +29,7 @@ class vector {
     public:
         const vector& operator=(const vector&);
         const vector& operator=(vector&&);
+
     private:
         void recap(size_type);
 
@@ -50,7 +51,17 @@ class vector {
         size_type size();
         size_type capacity();
         bool empty();
+
+    public:
+        reference operator[](size_type index);
+
 };
+    namespace std {
+	    template <typename T>
+    	ostream& operator <<(ostream& out, const vector<T>& ob);
+    }
+
+
 
 #include "vector.hpp"
 #endif
