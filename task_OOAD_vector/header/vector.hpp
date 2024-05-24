@@ -1,5 +1,5 @@
-#ifndef __VECTOR__TPP__
-#define __VECTOR__TPP__
+#ifndef __VECTOR__HPP__
+#define __VECTOR__HPP__
 
 #include <iostream>
 #include <memory>
@@ -335,6 +335,7 @@ void vector<T, Allocator>::clear() noexcept
     capacity_ = 0;
 }
 
+//ChatGPT
 template <typename T, typename Allocator>
 typename vector<T, Allocator>::iterator
 vector<T, Allocator>::insert(const_iterator pos, const_reference val) {
@@ -342,6 +343,7 @@ vector<T, Allocator>::insert(const_iterator pos, const_reference val) {
     emplace(begin() + index, val);
     return begin() + index;
 }
+
 
 template <typename T, typename Allocator>
 typename vector<T, Allocator>::iterator
@@ -381,6 +383,7 @@ vector<T, Allocator>::insert(const_iterator pos, InputIt first, InputIt last){
     return instPos;
 }
 
+//ChatGPT
 template <typename T, typename Allocator>
 typename vector<T, Allocator>::iterator
 vector<T, Allocator>::erase(const_iterator pos) {
@@ -840,4 +843,4 @@ vector<T, Allocator>::reverse_iterator::operator[](size_type pos) const {
 }
 
 
-#endif //__VECTOR__TPP__
+#endif //__VECTOR__HPP__
